@@ -64,22 +64,22 @@ def make_fig(df):
     data = df[['pre_mean', 'post_mean']].T
     yerr = df[['pre_std','post_std']].T
     data.index = yerr.index = ['Clinton-Trump pre', 'Clinton-Trump post']
-    data.columns = yerr.columns = [0,1]
-    fig = data.plot.bar(yerr = yerr, legend = False, edgecolor = 'black', color = 'bg',capsize=10)
+    data.columns = yerr.columns = ['Clinton','Trump']
+    fig = data.plot.bar(yerr = yerr, legend = True, edgecolor = 'black', color = 'bg',capsize=10)
     ax = plt.gca()
-    ax.set_ylabel('Sentiment', color = 'red')
-    ax.spines['bottom'].set_color('red')
-    ax.spines['top'].set_color('red')
-    ax.spines['left'].set_color('red')
-    ax.spines['right'].set_color('red')
+    ax.set_ylabel('Sentiment', color = 'black')
+    ax.spines['bottom'].set_color('black')
+    ax.spines['top'].set_color('black')
+    ax.spines['left'].set_color('black')
+    ax.spines['right'].set_color('black')
     
     ax.yaxis.label.set_fontsize(24)
     ax.xaxis.label.set_fontsize(24)
-    ax.tick_params(axis='x', colors='red', labelsize=16)
-    ax.tick_params(axis='y', colors='red', labelsize=12)
+    ax.tick_params(axis='x', colors='black', labelsize=16)
+    ax.tick_params(axis='y', colors='black', labelsize=12)
     ax.set_xticklabels( data.index, rotation='horizontal')
-    ax.patch.set_facecolor('#FDECE8')
-    plt.gcf().set_facecolor('black')
+    ax.patch.set_facecolor('white')
+    plt.gcf().set_facecolor('white')
 
     
 
