@@ -26,6 +26,7 @@ def get_sentiment(file):
         data = json.load(fp)
     sent_sub = []
     sent_polar = []
+    print(file,'contains',len(data),'tweets')
     for x in data:
             tweet = tb(x) 
             tweet_sent = tweet.sentiment
@@ -80,6 +81,7 @@ def make_fig(df):
     ax.set_xticklabels( data.index, rotation='horizontal')
     ax.patch.set_facecolor('white')
     plt.gcf().set_facecolor('white')
+    
 
     
 
@@ -101,7 +103,7 @@ def main():
     '''
     
     make_fig(get_ct_sentiment_frame())
-
+    print(get_ct_sentiment_frame())
     plt.show()
 
 if __name__ == '__main__':
